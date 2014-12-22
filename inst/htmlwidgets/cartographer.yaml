@@ -1,7 +1,23 @@
-# (uncomment to add a dependency)
-# dependencies:
-#  - name:
-#    version:
-#    src:
-#    script:
-#    stylesheet:
+dependencies:
+  - name: d3
+    version: 3.4.13
+    src: htmlwidgets/lib/d3
+    script:
+      - d3.min.js
+  - name: d3-plugins
+    version: 0.0.0
+    src: htmlwidgets/lib/d3-plugins/
+    script:
+      - geo/tile/tile.js
+  - name: topojson
+    version: 1.6.18
+    src: htmlwidgets/lib/topojson
+    script:
+      - topojson.js
+  - name: d3-carto-map
+    version: 0.4.0
+    src: htmlwidgets/lib/d3-carto-map
+    script:
+      - d3.carto.map.min.js
+    stylesheet:
+      - d3map.css
