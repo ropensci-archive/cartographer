@@ -14,6 +14,9 @@ HTMLWidgets.widget({
 
   renderValue: function(el, x, instance) {
 
+    console.log(x);
+    globaldata = x;
+
     var div = d3.select("#" + el.id)
       .append("div")
       .style("width", "100%")
@@ -27,7 +30,20 @@ HTMLWidgets.widget({
     var tiles = d3.carto.layer.tile();
     tiles.tileType("stamen").path("toner").label("Base");
 
-    map.addCartoLayer(tiles);
+    var points = d3.carto.layer.xyArray();
+    points
+    .features(JSON.parse(x.data))
+    .label("Points")
+    .renderMode("svg")
+    .clickableFeatures(true)
+    .cssClass("point")
+    .markerSize(5)
+    .x("long")
+    .y("lat")
+
+
+    map.addCartoLayer(tiles)
+       .addCartoLayer(points);
 
   },
 

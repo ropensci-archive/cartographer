@@ -7,9 +7,10 @@ Authors@R: c(person("Lincoln", "Mullen", email = "lincoln@lincolnmullen.com",
 Description: A wrapper around d3-carto-map and the d3.js visualization library
   to create interactive maps at the R console and in R documents.
 License: MIT + file LICENSE
-Depends: 
+Depends:
     R (>= 3.1.2)
-Imports: 
-    htmlwidgets (>= 0.3.2)
+Imports:
+    htmlwidgets (>= 0.3.2),
+    jsonlite (>= 0.9.14)
 Suggests: knitr
 VignetteBuilder: knitr
