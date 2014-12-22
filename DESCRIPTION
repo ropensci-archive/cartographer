@@ -10,7 +10,6 @@ License: MIT + file LICENSE
 Depends:
     R (>= 3.1.2)
 Imports:
-    htmlwidgets (>= 0.3.2),
-    jsonlite (>= 0.9.14)
+    htmlwidgets (>= 0.3.2)
 Suggests: knitr
 VignetteBuilder: knitr

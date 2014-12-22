@@ -14,8 +14,7 @@ HTMLWidgets.widget({
 
   renderValue: function(el, x, instance) {
 
-    console.log(x);
-    globaldata = x;
+    x.data = HTMLWidgets.dataframeToD3(x.data);
 
     var div = d3.select("#" + el.id)
       .append("div")
@@ -32,7 +31,7 @@ HTMLWidgets.widget({
 
     var points = d3.carto.layer.xyArray();
     points
-    .features(JSON.parse(x.data))
+    .features(x.data)
     .label("Points")
     .renderMode("svg")
     .clickableFeatures(true)

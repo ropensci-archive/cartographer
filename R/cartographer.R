@@ -8,7 +8,7 @@
 cartographer <- function(data, width = NULL, height = NULL) {
 
   # turn the data frame into JSON
-  data = toJSON(data)
+#   data = toJSON(data)
 
   # forward options using x
   x = list(
