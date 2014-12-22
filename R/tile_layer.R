@@ -7,11 +7,12 @@ tile_layer <- function(carto, provider = "stamen", path = "toner",
                        label = "Base") {
 
   tile = list()
+  tile$type     <- "tiles"
   tile$provider <- provider
   tile$path     <- path
   tile$label    <- label
 
-  carto$x$tile <- tile
+  carto$x[[length(carto$x) +1]] <- tile
 
   carto
 

@@ -7,6 +7,7 @@ points_layer <- function(carto, data, x = "long", y = "lat", label = "Points",
                          color = "red", size = 4, clickable = TRUE) {
 
   points = list()
+  points$type      <- "points"
   points$data      <- data
   points$x         <- x
   points$y         <- y
@@ -15,7 +16,7 @@ points_layer <- function(carto, data, x = "long", y = "lat", label = "Points",
   points$size      <- size
   points$clickable <- clickable
 
-  carto$x$points  <- points
+  carto$x[[length(carto$x) +1]] <- points
 
   carto
 

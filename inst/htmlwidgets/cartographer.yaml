@@ -21,3 +21,8 @@ dependencies:
       - d3.carto.map.min.js
     stylesheet:
       - d3map.css
+  - name: cartographer-helpers
+    version: 0
+    src: htmlwidgets/
+    script:
+      - cartographer-helpers.js
