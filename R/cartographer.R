@@ -5,12 +5,12 @@
 #' @import htmlwidgets
 #'
 #' @export
-cartographer <- function(message, width = NULL, height = NULL) {
+cartographer <- function(data, width = NULL, height = NULL) {
 
   # forward options using x
   x = list(
-    message = message
-  )
+    data = data
+    )
 
   # create widget
   htmlwidgets::createWidget(

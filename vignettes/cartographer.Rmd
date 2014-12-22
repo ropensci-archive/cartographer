@@ -1,0 +1,16 @@
+---
+title: "Using cartographer for Interactive Maps"
+author: "Lincoln Mullen"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8]{inputenc}
+---
+
+```{r fig.width=10}
+library(cartographer)
+cartographer("Hello world")
+```
+
