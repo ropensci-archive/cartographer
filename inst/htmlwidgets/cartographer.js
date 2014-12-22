@@ -14,6 +14,10 @@ HTMLWidgets.widget({
 
   renderValue: function(el, x, instance) {
 
+    // Debugginj
+    global = x;
+    console.log(global);
+
     x.data = HTMLWidgets.dataframeToD3(x.data);
 
     var div = d3.select("#" + el.id)
@@ -27,7 +31,10 @@ HTMLWidgets.widget({
     div.call(map);
 
     var tiles = d3.carto.layer.tile();
-    tiles.tileType("stamen").path("toner").label("Base");
+    tiles
+    .tileType(x.tile.provider)
+    .path(x.tile.path)
+    .label(x.tile.label);
 
     var points = d3.carto.layer.xyArray();
     points
