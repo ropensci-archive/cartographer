@@ -14,3 +14,6 @@ Imports:
     magrittr (>= 1.5)
 Suggests: knitr
 VignetteBuilder: knitr
+URL: https://github.com/lmullen/cartographer
+BugReports: https://github.com/lmullen/cartographer/issues
+
