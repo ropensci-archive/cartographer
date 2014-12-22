@@ -39,11 +39,18 @@ HTMLWidgets.widget({
     .markerSize(5)
     .x("long")
     .y("lat")
+    .on("load", function() {
+      d3.selectAll(".point")
+        .style("fill", "red")
+        .style("fill-opacity", "0.5")
+        .style("stroke", "black");
+    })
 
+    map.centerOn([-98.5795, 39.828175], "latlong")
+       .setScale(2);
 
     map.addCartoLayer(tiles)
        .addCartoLayer(points);
-
   },
 
   resize: function(el, width, height, instance) {
