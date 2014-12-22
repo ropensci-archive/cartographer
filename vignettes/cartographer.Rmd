@@ -9,8 +9,10 @@ vignette: >
   \usepackage[utf8]{inputenc}
 ---
 
-```{r fig.width=10}
+```{r fig.width=8, fig.height=8}
 library(cartographer)
-cartographer("Hello world")
+library(historydata)
+
+cartographer() %>% tile_layer(path = "watercolor", label = "Test") %>% points_layer(catholic_dioceses, color = "green", size = 5, label = "Dioceses")
 ```
 

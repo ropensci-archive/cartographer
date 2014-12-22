@@ -5,15 +5,10 @@
 #' @import htmlwidgets
 #'
 #' @export
-cartographer <- function(data, width = NULL, height = NULL) {
-
-  # turn the data frame into JSON
-#   data = toJSON(data)
+cartographer <- function(width = NULL, height = NULL) {
 
   # forward options using x
-  x = list(
-    data = data
-    )
+  x = list()
 
   # create widget
   htmlwidgets::createWidget(

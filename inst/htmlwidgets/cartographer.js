@@ -18,8 +18,6 @@ HTMLWidgets.widget({
     global = x;
     console.log(global);
 
-    x.data = HTMLWidgets.dataframeToD3(x.data);
-
     var div = d3.select("#" + el.id)
       .append("div")
       .style("width", "100%")
@@ -36,19 +34,21 @@ HTMLWidgets.widget({
     .path(x.tile.path)
     .label(x.tile.label);
 
+
+//    HTMLWidgets.dataframeToD3(x.data);
     var points = d3.carto.layer.xyArray();
     points
-    .features(x.data)
-    .label("Points")
+    .features(HTMLWidgets.dataframeToD3(x.points.data))
+    .label(x.points.label)
     .renderMode("svg")
-    .clickableFeatures(true)
+    .clickableFeatures(x.points.clickable)
     .cssClass("point")
-    .markerSize(5)
-    .x("long")
-    .y("lat")
+    .markerSize(x.points.size)
+    .x(x.points.x)
+    .y(x.points.y)
     .on("load", function() {
       d3.selectAll(".point")
-        .style("fill", "red")
+        .style("fill", x.points.color)
         .style("fill-opacity", "0.5")
         .style("stroke", "black");
     })
