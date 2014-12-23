@@ -12,7 +12,9 @@ Depends:
 Imports:
     htmlwidgets (>= 0.3.2),
     magrittr (>= 1.5)
-Suggests: knitr
+Suggests:
+    historydata (>= 0.1),
+    knitr
 VignetteBuilder: knitr
 URL: https://github.com/lmullen/cartographer
 BugReports: https://github.com/lmullen/cartographer/issues

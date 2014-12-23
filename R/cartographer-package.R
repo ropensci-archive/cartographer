@@ -6,7 +6,8 @@
 #' \href{http://d3js.org/}{d3.js} visualization library (created by Mike
 #' Bostock). It lets you create interactive maps at the R console and in R
 #' documents.
-#' @name cartographer
+#' @name cartographer-package
+#' @import htmlwidgets
 NULL
 
 #' Exports

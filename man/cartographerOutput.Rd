@@ -6,6 +6,13 @@
 \usage{
 cartographerOutput(outputId, width = "100\%", height = "400px")
 }
+\arguments{
+\item{outputId}{ID used for the output.}
+
+\item{width}{Width of the output.}
+
+\item{height}{Height of the output.}
+}
 \description{
 Widget output function for use in Shiny
 }
