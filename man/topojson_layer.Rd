@@ -4,7 +4,7 @@
 \alias{topojson_layer}
 \title{Topojson layer}
 \usage{
-topojson_layer(carto, data, file = NULL, label = "TopoJSON",
+topojson_layer(carto, data, feature, file = NULL, label = "TopoJSON",
   clickable = FALSE, fill = "lightblue", stroke = "black",
   opacity = 0.5)
 }

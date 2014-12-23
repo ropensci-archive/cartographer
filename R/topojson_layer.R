@@ -3,10 +3,13 @@
 #' Add a topojson layer to a d3-carto-map
 #'
 #' @export
-topojson_layer <- function(carto, data, file = NULL,
+topojson_layer <- function(carto, data, feature, file = NULL,
                            label = "TopoJSON", clickable = FALSE,
                            fill = "lightblue", stroke = "black",
                            opacity = 0.5) {
+
+  if(missing(data) & !is.null(file))
+     data <- read_file(file)
 
   layer = list()
   layer$type      <- "topojson"
@@ -16,6 +19,7 @@ topojson_layer <- function(carto, data, file = NULL,
   layer$fill      <- fill
   layer$stroke    <- stroke
   layer$opacity   <- opacity
+  layer$feature   <- feature
 
   carto$x[[length(carto$x) +1]] <- layer
 

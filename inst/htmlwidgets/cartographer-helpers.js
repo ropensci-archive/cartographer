@@ -59,7 +59,7 @@ function addTopojson(layer, map) {
 
   topo
   .features(topojson.feature(layer.data,
-                             layer.data.objects.us).features)
+                             layer.data.objects[layer.feature]).features)
   .label(layer.label)
   .renderMode("svg")
   .clickableFeatures(layer.clickable)
