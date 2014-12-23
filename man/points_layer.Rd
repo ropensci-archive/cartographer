@@ -9,12 +9,40 @@ points_layer(carto, data, x = "long", y = "lat", label = "Points",
   cluster = FALSE)
 }
 \arguments{
+\item{carto}{The map created by \code{cartographer()}.}
+
+\item{data}{A data frame with columns for the latitude and longitude in
+decimal degrees. It may also contain other columns to be used as
+properties.}
+
+\item{x}{The name of the column in the data frame with the longitudes.}
+
+\item{y}{The name of the column in the data frame with the latitudes.}
+
+\item{label}{The label for this layer on the layer selector.}
+
+\item{color}{The color of the points, either as a name recognized by a
+browser or as a hexadecimal string (e.g., \code{#4527f3}).}
+
+\item{size}{The radius of the points.}
+
+\item{clickable}{Controls whether a point can be clicked to show the
+properties in the data frame.}
+
 \item{visible}{Should the layer be initially visible?}
 
 \item{cluster}{If true, when the map is zoomed points will be clustered on a
-  quadtree.}
+quadtree.}
 }
 \description{
 Add a points layer to a d3-carto-map
+}
+\examples{
+if(require(historydata)) {
+  cartographer(region = "United States") \%>\%
+    tile_layer() \%>\%
+    points_layer(data = catholic_dioceses, x = "long", y = "lat",
+                 color = "blue", label = "Dioceses")
+}
 }
 
