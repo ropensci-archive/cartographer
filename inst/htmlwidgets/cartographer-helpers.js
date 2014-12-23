@@ -10,6 +10,9 @@ function parseLayers(arr, map) {
     case "topojson":
       addTopojson(arr[i], map);
       break;
+    case "geojson":
+      addGeojson(arr[i], map);
+      break;
     case "options":
       enactOptions(arr[i], map);
       break;
@@ -86,4 +89,27 @@ function addTopojson(layer, map) {
   });
 
   map.addCartoLayer(topo);
+}
+
+function addGeojson(layer, map) {
+  var geo = d3.carto.layer.featureArray();
+  layer.data = JSON.parse(layer.data);
+
+  console.log(layer.data)
+
+  geo
+  .features(layer.data.features)
+  .label(layer.label)
+  .renderMode("svg")
+  .clickableFeatures(layer.clickable)
+  .cssClass("geojson")
+  .visibility(layer.visible)
+  .on("load", function() {
+    geo.g().selectAll(".geojson")
+      .style("fill", layer.fill)
+      .style("fill-opacity", layer.opacity)
+      .style("stroke", layer.stroke);
+  });
+
+  map.addCartoLayer(geo);
 }

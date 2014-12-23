@@ -3,6 +3,7 @@
 export("%>%")
 export(cartographer)
 export(cartographerOutput)
+export(geojson_layer)
 export(points_layer)
 export(renderCartographer)
 export(tile_layer)
