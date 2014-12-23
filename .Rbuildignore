@@ -2,3 +2,9 @@
 ^\.Rproj\.user$
 ^\.bowerrc$
 ^data-raw$
+^inst/htmlwidgets/lib/d3-carto-map/\.bower\.json$
+^inst/htmlwidgets/lib/d3-plugins/\.bower\.json$
+^inst/htmlwidgets/lib/d3/\.bower\.json$
+^inst/htmlwidgets/lib/d3/\.spmignore$
+^inst/htmlwidgets/lib/topojson/\.bower\.json$
+^inst/htmlwidgets/lib/topojson/\.npmignore$
