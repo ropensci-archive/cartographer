@@ -26,6 +26,7 @@ function addTiles(layer, map) {
   tiles
   .tileType(layer.provider)
   .path(layer.path)
+  .visibility(layer.visible)
   .label(layer.label);
 
   map.addCartoLayer(tiles);
@@ -43,6 +44,7 @@ function addPoints(layer, map) {
   .markerSize(layer.size)
   .x(layer.x)
   .y(layer.y)
+  .visibility(layer.visible)
   .on("load", function() {
     points.g().selectAll(".point")
       .style("fill", layer.color)
@@ -64,6 +66,7 @@ function addTopojson(layer, map) {
   .renderMode("svg")
   .clickableFeatures(layer.clickable)
   .cssClass("topojson")
+  .visibility(layer.visible)
   .on("load", function() {
     topo.g().selectAll(".topojson")
       .style("fill", layer.fill)

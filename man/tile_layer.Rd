@@ -5,7 +5,7 @@
 \title{Tile layer}
 \usage{
 tile_layer(carto, provider = c("stamen", "mapbox"), path = "toner-lite",
-  label = "Tiles")
+  label = "Tiles", visible = TRUE)
 }
 \arguments{
 \item{carto}{The map created by \code{cartographer()}.}
@@ -22,6 +22,8 @@ Stamen's \href{http://maps.stamen.com/}{free tile options} include these:
 example, \code{examples.map-zr0njcqy}. See some \href{http://a.tiles.mapbox.com/v3/mapbox/maps.html}{example Mapbox tiles}.}
 
 \item{label}{The label for this layer on the layer selector.}
+
+\item{visible}{Should the layer be initially visible?}
 }
 \description{
 Add a tile layer to a d3-carto-map.

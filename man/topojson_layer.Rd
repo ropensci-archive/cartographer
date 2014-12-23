@@ -6,7 +6,10 @@
 \usage{
 topojson_layer(carto, data, feature, file = NULL, label = "TopoJSON",
   clickable = FALSE, fill = "lightblue", stroke = "black",
-  opacity = 0.5)
+  opacity = 0.5, visible = TRUE)
+}
+\arguments{
+\item{visible}{Should the layer be initially visible?}
 }
 \description{
 Add a topojson layer to a d3-carto-map

@@ -5,7 +5,10 @@
 \title{Points layer}
 \usage{
 points_layer(carto, data, x = "long", y = "lat", label = "Points",
-  color = "red", size = 4, clickable = TRUE)
+  color = "red", size = 4, clickable = TRUE, visible = TRUE)
+}
+\arguments{
+\item{visible}{Should the layer be initially visible?}
 }
 \description{
 Add a points layer to a d3-carto-map

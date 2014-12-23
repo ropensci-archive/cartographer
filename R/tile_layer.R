@@ -13,6 +13,7 @@
 #'   \href{https://www.mapbox.com/}{Mapbox} take the form of \code{user.id}, for
 #'   example, \code{examples.map-zr0njcqy}. See some \href{http://a.tiles.mapbox.com/v3/mapbox/maps.html}{example Mapbox tiles}.
 #' @param label The label for this layer on the layer selector.
+#' @param visible Should the layer be initially visible?
 #' @examples
 #' cartographer(region = "Africa") %>%
 #'   tile_layer() %>%
@@ -25,7 +26,8 @@
 #' @seealso \code{\link{cartographer}}
 #' @export
 tile_layer <- function(carto, provider = c("stamen", "mapbox"),
-                       path = "toner-lite", label = "Tiles") {
+                       path = "toner-lite", label = "Tiles",
+                       visible = TRUE) {
 
   provider <- match.arg(provider)
 
@@ -34,6 +36,7 @@ tile_layer <- function(carto, provider = c("stamen", "mapbox"),
   tile$provider <- provider
   tile$path     <- path
   tile$label    <- label
+  tile$visible  <- visible
 
   carto$x[[length(carto$x) +1]] <- tile
 
