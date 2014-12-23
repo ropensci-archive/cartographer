@@ -4,14 +4,42 @@
 \alias{topojson_layer}
 \title{Topojson layer}
 \usage{
-topojson_layer(carto, data, feature, file = NULL, label = "TopoJSON",
+topojson_layer(carto, data, file = NULL, feature, label = "TopoJSON",
   clickable = FALSE, fill = "lightblue", stroke = "black",
   opacity = 0.5, visible = TRUE)
 }
 \arguments{
+\item{carto}{The map created by \code{cartographer()}.}
+
+\item{data}{A topojson string (unparsed). The topojson can be provided
+through the \code{file} parameter instead.}
+
+\item{file}{The path to a topojson file.}
+
+\item{feature}{The name of the feature object to be mapped.}
+
+\item{label}{The label for this layer on the layer selector.}
+
+\item{clickable}{Controls whether a point can be clicked to show the
+properties in the data frame.}
+
+\item{fill}{The fill color of the topojson polygons, either as a name
+recognized by a browser or as a hexadecimal string (e.g., \code{#4527f3}).}
+
+\item{stroke}{The stroke color of the topojson polygons.}
+
+\item{opacity}{The opacity of the topojson polygons.}
+
 \item{visible}{Should the layer be initially visible?}
 }
 \description{
-Add a topojson layer to a d3-carto-map
+Add a \href{https://github.com/mbostock/topojson}{topojson} layer to a
+d3-carto-map.
+}
+\examples{
+# Path to a sample topojson file
+us1853 <- system.file("extdata", "us1853.topojson", package = "cartographer")
+cartographer(region = "United States") \%>\%
+  topojson_layer(file = us1853, feature = "us", label = "US 1853")
 }
 

@@ -35,7 +35,7 @@ properties in the data frame.}
 quadtree.}
 }
 \description{
-Add a points layer to a d3-carto-map
+Add a points layer to a d3-carto-map.
 }
 \examples{
 if(require(historydata)) {

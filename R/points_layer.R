@@ -1,6 +1,6 @@
 #' Points layer
 #'
-#' Add a points layer to a d3-carto-map
+#' Add a points layer to a d3-carto-map.
 #'
 #' @param carto The map created by \code{cartographer()}.
 #' @param data A data frame with columns for the latitude and longitude in
