@@ -1,6 +1,7 @@
 library(rgdal)
 library(dplyr)
 library(devtools)
+library(stringi)
 
 zip <- "data-raw/countries.zip"
 if(!file.exists(zip)) {
@@ -33,6 +34,13 @@ for(i in seq(l)) {
 
 countries_bbox <- df %>%
   filter(iso != "-99")
+
+# Fix bad characters
+mapL <- c("á","é","í","ó","ú","Á","É","Í","Ó","Ú","ñ","Ñ","ü","Ü","ç","ã","ô") %>%
+  paste(collapse = "")
+mapA <- c("a","e","i","o","u","A","E","I","O","U","n","N","u","U","c","a","o") %>%
+  paste(collapse = "")
+countries_bbox$name <- chartr(mapL, mapA, countries_bbox$name)
 
 use_data(countries_bbox, overwrite = TRUE)
 
