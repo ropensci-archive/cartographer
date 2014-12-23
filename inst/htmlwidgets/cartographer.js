@@ -30,9 +30,6 @@ HTMLWidgets.widget({
 
     parseLayers(x, map);
 
-    map.centerOn([-98.5795, 39.828175], "latlong")
-       .setScale(2);
-
   },
 
   resize: function(el, width, height, instance) {

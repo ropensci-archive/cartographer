@@ -5,9 +5,17 @@ function parseLayers(arr, map) {
       addPoints(arr[i], map);
       break;
     case "tiles":
-      addTiles(arr[i], map)
+      addTiles(arr[i], map);
+      break;
+    case "options":
+      enactOptions(arr[i], map);
       break;
   }
+}
+
+function enactOptions(layer, map) {
+    console.log(layer.bbox);
+    map.zoomTo(layer.bbox, "latlong", 0.9);
 }
 
 function addTiles(layer, map) {
