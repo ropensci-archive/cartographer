@@ -15,8 +15,7 @@ HTMLWidgets.widget({
   renderValue: function(el, x, instance) {
 
     // Debugging
-    global = x;
-    console.log(global);
+    globaldata = x;
 
     var div = d3.select("#" + el.id)
       .append("div")
@@ -29,6 +28,8 @@ HTMLWidgets.widget({
     div.call(map);
 
     parseLayers(x, map);
+
+    globalmap = map;
 
   },
 

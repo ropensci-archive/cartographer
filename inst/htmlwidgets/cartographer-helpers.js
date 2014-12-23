@@ -95,8 +95,6 @@ function addGeojson(layer, map) {
   var geo = d3.carto.layer.featureArray();
   layer.data = JSON.parse(layer.data);
 
-  console.log(layer.data)
-
   geo
   .features(layer.data.features)
   .label(layer.label)
