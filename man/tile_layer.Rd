@@ -4,9 +4,39 @@
 \alias{tile_layer}
 \title{Tile layer}
 \usage{
-tile_layer(carto, provider = "stamen", path = "toner", label = "Base")
+tile_layer(carto, provider = c("stamen", "mapbox"), path = "toner-lite",
+  label = "Tiles")
+}
+\arguments{
+\item{carto}{The map created by \code{cartographer()}.}
+
+\item{provider}{The name of the provider of the map tiles. d3-carto-map
+currently supports \code{stamen} and \code{mapbox}.}
+
+\item{path}{The string that identifies the type of tiles from the provider.
+Stamen's \href{http://maps.stamen.com/}{free tile options} include these:
+\itemize{ \item \code{toner} \item \code{toner-lite} \item
+\code{toner-hybrid} \item \code{toner-background} \item \code{terrain}
+\item \code{terrain-background} \item \code{watercolor} } Tile options from
+\href{https://www.mapbox.com/}{Mapbox} take the form of \code{user.id}, for
+example, \code{examples.map-zr0njcqy}. See some \href{http://a.tiles.mapbox.com/v3/mapbox/maps.html}{example Mapbox tiles}.}
+
+\item{label}{The label for this layer on the layer selector.}
 }
 \description{
-Add a tile layer to a d3-carto-map
+Add a tile layer to a d3-carto-map.
+}
+\examples{
+cartographer(region = "Africa") \%>\%
+  tile_layer() \%>\%
+  tile_layer(provider = "mapbox", path = "mapbox.world-bright",
+             label = "World Bright") \%>\%
+  tile_layer(provider = "mapbox", path = "mapbox.natural-earth-1",
+             label = "Natural Earth") \%>\%
+  tile_layer(provider = "mapbox", path = "mapbox.geography-class",
+             label = "Geography")
+}
+\seealso{
+\code{\link{cartographer}}
 }
 

@@ -18,4 +18,5 @@ Suggests:
 VignetteBuilder: knitr
 URL: https://github.com/lmullen/cartographer
 BugReports: https://github.com/lmullen/cartographer/issues
+LazyData: yes
 
