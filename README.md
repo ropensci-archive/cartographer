@@ -6,4 +6,4 @@ It is under very early development.
 
 ### License
 
-This code is released under the [MIT License](http://lmullen.mit-license.org/). The included JavaScript libraries are used under the terms of their own licenses.
+This code is released under the [MIT License](http://lmullen.mit-license.org/). The included JavaScript libraries are used under the terms of their own licenses. See the directories in `inst/htmlwidgets/lib/` for their licenses.
