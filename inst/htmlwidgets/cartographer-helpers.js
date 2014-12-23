@@ -7,6 +7,9 @@ function parseLayers(arr, map) {
     case "tiles":
       addTiles(arr[i], map);
       break;
+    case "topojson":
+      addTopojson(arr[i], map);
+      break;
     case "options":
       enactOptions(arr[i], map);
       break;
@@ -14,7 +17,6 @@ function parseLayers(arr, map) {
 }
 
 function enactOptions(layer, map) {
-    console.log(layer.bbox);
     map.zoomTo(layer.bbox, "latlong", 0.9);
 }
 
@@ -49,4 +51,25 @@ function addPoints(layer, map) {
   })
 
   map.addCartoLayer(points);
+}
+
+function addTopojson(layer, map) {
+  var topo = d3.carto.layer.featureArray();
+  layer.data = JSON.parse(layer.data);
+
+  topo
+  .features(topojson.feature(layer.data,
+                             layer.data.objects.us).features)
+  .label(layer.label)
+  .renderMode("svg")
+  .clickableFeatures(layer.clickable)
+  .cssClass("topojson")
+  .on("load", function() {
+    topo.g().selectAll(".topojson")
+      .style("fill", layer.fill)
+      .style("fill-opacity", layer.opacity)
+      .style("stroke", layer.stroke);
+  });
+
+  map.addCartoLayer(topo);
 }

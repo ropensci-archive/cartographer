@@ -14,5 +14,7 @@ library(cartographer)
 library(historydata)
 
 cartographer() %>% tile_layer(path = "watercolor", label = "Test") %>% points_layer(catholic_dioceses, color = "green", size = 5, label = "Dioceses")
+
+system.file("extdata", "us1853.topojson", package = "cartographer") %>% readChar(., nchars = file.info(.)$size) 
 ```
 
