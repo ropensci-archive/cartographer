@@ -5,10 +5,14 @@
 \title{Points layer}
 \usage{
 points_layer(carto, data, x = "long", y = "lat", label = "Points",
-  color = "red", size = 4, clickable = TRUE, visible = TRUE)
+  color = "red", size = 4, clickable = TRUE, visible = TRUE,
+  cluster = FALSE)
 }
 \arguments{
 \item{visible}{Should the layer be initially visible?}
+
+\item{cluster}{If true, when the map is zoomed points will be clustered on a
+  quadtree.}
 }
 \description{
 Add a points layer to a d3-carto-map

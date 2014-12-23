@@ -33,7 +33,19 @@ function addTiles(layer, map) {
 }
 
 function addPoints(layer, map) {
+
   var points = d3.carto.layer.xyArray();
+
+  var colorPoints = function() {
+    points.g().selectAll(".point")
+      .style("fill", layer.color)
+      .style("fill-opacity", "0.5")
+      .style("stroke", "black");
+    d3.selectAll("#cps1").selectAll("circle.point")
+      .style("fill", layer.color)
+      .style("fill-opacity", "0.5")
+      .style("stroke", "black");
+  }
 
   points
   .features(HTMLWidgets.dataframeToD3(layer.data))
@@ -42,18 +54,17 @@ function addPoints(layer, map) {
   .clickableFeatures(layer.clickable)
   .cssClass("point")
   .markerSize(layer.size)
+  .markerColor(function(d) {return "#ff0000"})
   .x(layer.x)
   .y(layer.y)
+  .cluster(layer.cluster)
   .visibility(layer.visible)
-  .on("load", function() {
-    points.g().selectAll(".point")
-      .style("fill", layer.color)
-      .style("fill-opacity", "0.5")
-      .style("stroke", "black");
-  })
+  .on("load", colorPoints)
+  .on("recluster", colorPoints);
 
   map.addCartoLayer(points);
 }
+
 
 function addTopojson(layer, map) {
   var topo = d3.carto.layer.featureArray();
