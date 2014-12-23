@@ -4,7 +4,8 @@
 \alias{cartographer}
 \title{Interactive Maps with d3-carto-map}
 \usage{
-cartographer(width = NULL, height = NULL)
+cartographer(region = NULL, bbox = list(c(-180, -80), c(180, 80)),
+  width = NULL, height = NULL)
 }
 \description{
 Interactive Maps with d3-carto-map

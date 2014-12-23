@@ -31,7 +31,29 @@ for(i in seq(l)) {
   df[i, ]$y_max <- box[4]
 }
 
-world_bounding_boxes <- df %>%
+countries_bbox <- df %>%
   filter(iso != "-99")
 
-use_data(world_bounding_boxes, overwrite = TRUE)
+use_data(countries_bbox, overwrite = TRUE)
+
+df <- data_frame(name = c("North America", "Asia", "Europe", "Africa",
+                          "South America", "Oceania", "Antarctica"),
+                 x_min = vector(mode = "numeric", length = 7),
+                 x_max = vector(mode = "numeric", length = 7),
+                 y_min = vector(mode = "numeric", length = 7),
+                 y_max = vector(mode = "numeric", length = 7))
+
+for(i in seq(nrow(df))) {
+  name <- df$name[i]
+  print(name)
+  box <- bbox(countries[countries$CONTINENT == name, ])
+  print(box)
+  df[i, ]$x_min <- box[1]
+  df[i, ]$x_max <- box[3]
+  df[i, ]$y_min <- box[2]
+  df[i, ]$y_max <- box[4]
+}
+
+continents_bbox <- df
+
+use_data(continents_bbox, overwrite = TRUE)
