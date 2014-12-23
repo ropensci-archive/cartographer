@@ -1,23 +1,23 @@
-#' Topojson layer
+#' TopoJSON layer
 #'
-#' Add a \href{https://github.com/mbostock/topojson}{topojson} layer to a
+#' Add a \href{https://github.com/mbostock/topojson}{TopoJSON} layer to a
 #' d3-carto-map.
 #'
 #' @param carto The map created by \code{cartographer()}.
-#' @param data A topojson string (unparsed). The topojson can be provided
+#' @param data A TopoJSON string (unparsed). The topojson can be provided
 #'   through the \code{file} parameter instead.
 #' @param file The path to a topojson file.
 #' @param feature The name of the feature object to be mapped.
 #' @param visible Should the layer be initially visible?
 #' @param clickable Controls whether a point can be clicked to show the
 #'   properties in the data frame.
-#' @param fill The fill color of the topojson polygons, either as a name
+#' @param fill The fill color of the TopoJSON polygons, either as a name
 #'   recognized by a browser or as a hexadecimal string (e.g., \code{#4527f3}).
-#' @param stroke The stroke color of the topojson polygons.
-#' @param opacity The opacity of the topojson polygons.
+#' @param stroke The stroke color of the TopoJSON polygons.
+#' @param opacity The opacity of the TopoJSON polygons.
 #' @param label The label for this layer on the layer selector.
 #' @examples
-#' # Path to a sample topojson file
+#' # Path to a sample TopoJSON file
 #' us1853 <- system.file("extdata", "us1853.topojson", package = "cartographer")
 #' cartographer(region = "United States") %>%
 #'   topojson_layer(file = us1853, feature = "us", label = "US 1853")

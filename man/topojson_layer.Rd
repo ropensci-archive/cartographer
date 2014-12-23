@@ -2,7 +2,7 @@
 % Please edit documentation in R/topojson_layer.R
 \name{topojson_layer}
 \alias{topojson_layer}
-\title{Topojson layer}
+\title{TopoJSON layer}
 \usage{
 topojson_layer(carto, data, file = NULL, feature, label = "TopoJSON",
   clickable = FALSE, fill = "lightblue", stroke = "black",
@@ -11,7 +11,7 @@ topojson_layer(carto, data, file = NULL, feature, label = "TopoJSON",
 \arguments{
 \item{carto}{The map created by \code{cartographer()}.}
 
-\item{data}{A topojson string (unparsed). The topojson can be provided
+\item{data}{A TopoJSON string (unparsed). The topojson can be provided
 through the \code{file} parameter instead.}
 
 \item{file}{The path to a topojson file.}
@@ -23,21 +23,21 @@ through the \code{file} parameter instead.}
 \item{clickable}{Controls whether a point can be clicked to show the
 properties in the data frame.}
 
-\item{fill}{The fill color of the topojson polygons, either as a name
+\item{fill}{The fill color of the TopoJSON polygons, either as a name
 recognized by a browser or as a hexadecimal string (e.g., \code{#4527f3}).}
 
-\item{stroke}{The stroke color of the topojson polygons.}
+\item{stroke}{The stroke color of the TopoJSON polygons.}
 
-\item{opacity}{The opacity of the topojson polygons.}
+\item{opacity}{The opacity of the TopoJSON polygons.}
 
 \item{visible}{Should the layer be initially visible?}
 }
 \description{
-Add a \href{https://github.com/mbostock/topojson}{topojson} layer to a
+Add a \href{https://github.com/mbostock/topojson}{TopoJSON} layer to a
 d3-carto-map.
 }
 \examples{
-# Path to a sample topojson file
+# Path to a sample TopoJSON file
 us1853 <- system.file("extdata", "us1853.topojson", package = "cartographer")
 cartographer(region = "United States") \%>\%
   topojson_layer(file = us1853, feature = "us", label = "US 1853")
