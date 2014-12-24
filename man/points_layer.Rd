@@ -5,8 +5,8 @@
 \title{Points layer}
 \usage{
 points_layer(carto, data, x = "long", y = "lat", label = "Points",
-  color = "red", size = 4, clickable = TRUE, visible = TRUE,
-  cluster = FALSE)
+  color = "red", size = 4, radius_field = NULL, clickable = TRUE,
+  visible = TRUE, cluster = FALSE)
 }
 \arguments{
 \item{carto}{The map created by \code{cartographer()}.}
@@ -24,7 +24,14 @@ properties.}
 \item{color}{The color of the points, either as a name recognized by a
 browser or as a hexadecimal string (e.g., \code{#4527f3}).}
 
-\item{size}{The radius of the points.}
+\item{size}{The radius of the points. If the parameter \code{radius_field} is
+set so that the points are scaled to a variable in \code{data}, then the
+\code{size} parameter controls the maximum size of the points.}
+
+\item{radius_field}{The name of a numeric field in the data frame passed to
+\code{data}. This field will be used to scale the points. The domain of the
+scale will run from 0 to the maximum value in the \code{radius_field}; the
+range will run from 0 to the value in \code{size}.}
 
 \item{clickable}{Controls whether a point can be clicked to show the
 properties in the data frame.}
@@ -41,8 +48,9 @@ Add a points layer to a d3-carto-map.
 if(require(historydata)) {
   cartographer(region = "United States") \%>\%
     tile_layer() \%>\%
-    points_layer(data = catholic_dioceses, x = "long", y = "lat",
-                 color = "blue", label = "Dioceses")
+    points_layer(data = paulist_missions, x = "long", y = "lat",
+                 color = "blue", label = "Missions",
+                 radius_field = "confessions", size = 8)
 }
 }
 

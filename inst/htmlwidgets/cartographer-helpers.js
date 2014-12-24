@@ -40,10 +40,18 @@ function addPoints(layer, map) {
   var points = d3.carto.layer.xyArray();
 
   var colorPoints = function() {
+    var radiusScale = d3.scale.sqrt()
+      .domain([0, layer.radius_domain])
+      .range([0, layer.size])
+
     points.g().selectAll(".point")
       .style("fill", layer.color)
       .style("fill-opacity", "0.5")
-      .style("stroke", "black");
+      .style("stroke", "black")
+      .attr("r", function(d) {
+        return radiusScale(d[layer.radius_field]);
+      })
+
     d3.selectAll("#cps1").selectAll("circle.point")
       .style("fill", layer.color)
       .style("fill-opacity", "0.5")
