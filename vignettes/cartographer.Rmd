@@ -155,6 +155,23 @@ cartographer(region = "United States") %>%
   topojson_layer(file = us, feature = "us", label = "US 1853")
 ```
 
+## SpatialPolygonsDataFrame
+
+Many geospatial packages in R use the classes in the [sp](http://cran.r-project.org/web/packages/sp/index.html) package. For example, if you read in a polygons shapefile using [rgdal](http://cran.r-project.org/web/packages/rgdal/index.html), it will have the class \code{SpatialPolygonsDataFrame}. These objects can be converted to GeoJSON strings to use in a GeoJSON polygons layer. The function to do the conversion is `sp_to_geojson()`. In this example, we will load a polygon object from the [USAboundaries](https://github.com/ropensci/USAboundaries) package, then convert it to GeoJSON and map it.
+
+```{r}
+library(USAboundaries)
+us_sp <- us_boundaries(as.Date("1800-01-01"))
+class(us_sp)
+
+us_geo <- sp_to_geojson(us_sp)
+
+cartographer(region = "United States") %>%
+  tile_layer() %>%
+  geojson_layer(data = us_geo, label = "US 1800", clickable = TRUE)
+```
+
+
 ## Options
 
 ### General
