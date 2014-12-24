@@ -55,7 +55,7 @@ function addPoints(layer, map) {
 
     d3.selectAll("#cps1").selectAll("circle.point")
       .style("fill", layer.color)
-      .style("fill-opacity", "0.5")
+      .style("fill-opacity", layer.opacity)
       .style("stroke", "black");
   }
 

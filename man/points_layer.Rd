@@ -6,7 +6,7 @@
 \usage{
 points_layer(carto, data, x = "long", y = "lat", label = "Points",
   color = "red", size = 4, radius_field = NULL, clickable = TRUE,
-  visible = TRUE, cluster = FALSE,
+  visible = TRUE, cluster = FALSE, opacity = 0.5,
   radius_function = "d3.scale.sqrt().domain([0, layer.radius_domain]).range([0, layer.size])")
 }
 \arguments{
@@ -42,6 +42,8 @@ properties in the data frame.}
 \item{cluster}{If true, when the map is zoomed points will be clustered on a
 quadtree. If the points are clustered, arguments that control the size of
 points will be disregarded.}
+
+\item{opacity}{The opacity of points on the map: a number between 0 and 1.}
 
 \item{radius_function}{A
 \href{https://github.com/mbostock/d3/wiki/Quantitative-Scales}{D3
