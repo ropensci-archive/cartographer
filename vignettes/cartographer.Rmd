@@ -11,10 +11,10 @@ vignette: >
 
 ```{r, echo=FALSE}
 library(knitr)
-opts_chunk$set(fig.width = 7, fig.height = 4)
+opts_chunk$set(fig.width = 7.2, fig.height = 4.25)
 ```
 
-The cartographer package lets you create interactive, exploratory maps inside R. It is an interface to the [d3-carto-map](https://github.com/emeeks/d3-carto-map) JavaScript library written by Elijah Meeks, which in turn provides additional mapping functions to the [D3.js](http://d3js.org/) JavaScript library by Mike Bostock. The cartographer package is not intended to implement all the features of d3-carto-map, but rather provides the ability to create the kinds of maps that are useful for data exploration.
+The cartographer package lets you create interactive, exploratory maps inside R. It is an interface to the [d3-carto-map](https://github.com/emeeks/d3-carto-map) JavaScript library written by [Elijah Meeks](https://twitter.com/elijah_meeks), which in turn provides additional mapping functions to the [D3.js](http://d3js.org/) JavaScript library by [Mike Bostock](http://bost.ocks.org/mike/). The cartographer package is not intended to implement all the features of d3-carto-map, but rather provides the ability to create the kinds of maps that are useful for data exploration.
 
 To demonstrate the uses of the cartographer package, we will use the spatial data provided by the [historydata](https://github.com/ropensci/historydata) package and [dplyr](http://cran.rstudio.org/web/packages/dplyr/) for data manipulation.
 
