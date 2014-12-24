@@ -39,12 +39,12 @@ function addPoints(layer, map) {
 
   var points = d3.carto.layer.xyArray();
 
-  var colorPoints = function() {
+  var stylePoints = function() {
     var radiusScale = eval(layer.radius_func);
 
     points.g().selectAll(".point")
       .style("fill", layer.color)
-      .style("fill-opacity", "0.5")
+      .style("fill-opacity", layer.opacity)
       .style("stroke", "black")
       .attr("r", function(d) {
         if(layer.radius_field)
@@ -52,8 +52,11 @@ function addPoints(layer, map) {
         else
           return layer.size;
       })
+  }
 
-    d3.selectAll("#cps1").selectAll("circle.point")
+  var styleCluster = function() {
+    globalpoints = points;
+    points.clusterLayer().g().selectAll(".point")
       .style("fill", layer.color)
       .style("fill-opacity", layer.opacity)
       .style("stroke", "black");
@@ -71,8 +74,8 @@ function addPoints(layer, map) {
   .y(layer.y)
   .cluster(layer.cluster)
   .visibility(layer.visible)
-  .on("load", colorPoints)
-  .on("recluster", colorPoints);
+  .on("load", stylePoints)
+  .on("recluster", styleCluster);
 
   map.addCartoLayer(points);
 }
