@@ -47,7 +47,10 @@ function addPoints(layer, map) {
       .style("fill-opacity", "0.5")
       .style("stroke", "black")
       .attr("r", function(d) {
-        return radiusScale(d[layer.radius_field]);
+        if(layer.radius_field)
+          return radiusScale(d[layer.radius_field]);
+        else
+          return layer.size;
       })
 
     d3.selectAll("#cps1").selectAll("circle.point")

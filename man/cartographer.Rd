@@ -9,7 +9,7 @@ cartographer(region = NULL, bbox = NULL, width = NULL, height = NULL)
 \arguments{
 \item{region}{The region to which the map should be centered. This region can
 be one of several types. Passing a
-\href{http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}{two-digit ISO
+\href{http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2}{two-letter ISO
 country code} will center the map on that country. The string \code{"United
 States"} will center the map on the continental United States of America.
 You can also use the names of continents. The region is case insensitive.}
