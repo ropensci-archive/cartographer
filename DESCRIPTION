@@ -1,7 +1,7 @@
 Package: cartographer
 Type: Package
 Title: Interactive Maps for Data Exploration
-Version: 0.1.9000
+Version: 0.1.9001
 Authors@R: c(person("Lincoln", "Mullen", email = "lincoln@lincolnmullen.com",
     role = c("aut", "cre")))
 Description: A wrapper around d3-carto-map and the d3.js visualization library
