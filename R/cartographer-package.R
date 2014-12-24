@@ -8,6 +8,8 @@
 #' documents.
 #' @name cartographer-package
 #' @import htmlwidgets
+#' @import assertthat
+#' @importFrom rgdal writeOGR
 NULL
 
 #' Exports
