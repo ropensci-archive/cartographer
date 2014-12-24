@@ -18,11 +18,15 @@
 #'   \code{data}. This field will be used to scale the points. The domain of the
 #'   scale will run from 0 to the maximum value in the \code{radius_field}; the
 #'   range will run from 0 to the value in \code{size}.
+#' @param radius_function A
+#'   \href{https://github.com/mbostock/d3/wiki/Quantitative-Scales}{D3
+#'   quantitative scale function} to control the radius of the points.
 #' @param clickable Controls whether a point can be clicked to show the
 #'   properties in the data frame.
 #' @param visible Should the layer be initially visible?
 #' @param cluster If true, when the map is zoomed points will be clustered on a
-#'   quadtree.
+#'   quadtree. If the points are clustered, arguments that control the size of
+#'   points will be disregarded.
 #' @examples
 #' if(require(historydata)) {
 #'   cartographer(region = "United States") %>%
@@ -33,8 +37,9 @@
 #' }
 #' @export
 points_layer <- function(carto, data, x = "long", y = "lat", label = "Points",
-                         color = "red", size = 4, radius_field = NULL,
-                         clickable = TRUE, visible = TRUE, cluster = FALSE) {
+  color = "red", size = 4, radius_field = NULL, clickable = TRUE,
+  visible = TRUE, cluster = FALSE,
+  radius_function = "d3.scale.sqrt().domain([0, layer.radius_domain]).range([0, layer.size])") {
 
   # Calculate the maximum for the domain of the radius scale function
   if(!is.null(radius_field))
@@ -43,18 +48,19 @@ points_layer <- function(carto, data, x = "long", y = "lat", label = "Points",
     radius_domain <- NULL
 
   points = list()
-  points$type          <- "points"
-  points$data          <- data
-  points$x             <- x
-  points$y             <- y
-  points$label         <- label
-  points$color         <- color
-  points$size          <- size
-  points$clickable     <- clickable
-  points$visible       <- visible
-  points$cluster       <- cluster
-  points$radius_domain <- radius_domain
-  points$radius_field  <- radius_field
+  points$type            <- "points"
+  points$data            <- data
+  points$x               <- x
+  points$y               <- y
+  points$label           <- label
+  points$color           <- color
+  points$size            <- size
+  points$clickable       <- clickable
+  points$visible         <- visible
+  points$cluster         <- cluster
+  points$radius_domain   <- radius_domain
+  points$radius_field    <- radius_field
+  points$radius_function <- radius_function
 
   carto$x[[length(carto$x) +1]] <- points
 

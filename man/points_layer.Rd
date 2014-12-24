@@ -6,7 +6,8 @@
 \usage{
 points_layer(carto, data, x = "long", y = "lat", label = "Points",
   color = "red", size = 4, radius_field = NULL, clickable = TRUE,
-  visible = TRUE, cluster = FALSE)
+  visible = TRUE, cluster = FALSE,
+  radius_function = "d3.scale.sqrt().domain([0, layer.radius_domain]).range([0, layer.size])")
 }
 \arguments{
 \item{carto}{The map created by \code{cartographer()}.}
@@ -39,7 +40,12 @@ properties in the data frame.}
 \item{visible}{Should the layer be initially visible?}
 
 \item{cluster}{If true, when the map is zoomed points will be clustered on a
-quadtree.}
+quadtree. If the points are clustered, arguments that control the size of
+points will be disregarded.}
+
+\item{radius_function}{A
+\href{https://github.com/mbostock/d3/wiki/Quantitative-Scales}{D3
+quantitative scale function} to control the radius of the points.}
 }
 \description{
 Add a points layer to a d3-carto-map.
