@@ -37,7 +37,7 @@ cartographer <- function(region = NULL, bbox = NULL,
     else
       bbox <- get_bbox(region)
   } else {
-    bbox <- list(c(-160, 70), c(160, -70))
+    bbox <- list(c(-140, -45), c(140, 60))
   }
 
   options        <- list()
