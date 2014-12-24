@@ -60,6 +60,13 @@ cartographer() %>%
   tile_layer(provider = "mapbox", path = "mapbox.geography-class")
 ```
 
+Mapbox's "Natural Earth Hypso/Bathy":
+
+```{r}
+cartographer() %>%
+  tile_layer(provider = "mapbox", path = "mapbox.natural-earth-hypso-bathy")
+```
+
 ## Points layers
 
 Points can be displayed on the map using a data frame with columns for latitude and longitude (in decimal degrees) and other columns with additional data. We will create a map of the Catholic dioceses in North America using the `catholic_dioceses` data set in the historydata package.
@@ -97,7 +104,7 @@ cartographer(region = "united states") %>%
 
 ### Clustered Points
 
-When you have large numbers of points, it may make sense to cluser the points. The points will cluster together when you zoom out, and disaggregate when you zoom in. 
+When you have large numbers of points, it may make sense to cluster the points. The points will cluster together when you zoom out, and disaggregate when you zoom in. 
 
 ```{r}
 cartographer(region = "United States") %>%
@@ -114,9 +121,9 @@ data(paulist_missions)
 
 cartographer(region = "United States") %>%
   tile_layer() %>%
-  points_layer(data = paulist_missions, radius_field = "confessions", size = 8,
+  points_layer(data = paulist_missions, radius_field = "confessions", size = 12,
                label = "Confessions") %>%
-  points_layer(data = paulist_missions, radius_field = "converts", size = 8,
+  points_layer(data = paulist_missions, radius_field = "converts", size = 12,
                color = "green", label = "Converts", visible = FALSE)
 ```
 
