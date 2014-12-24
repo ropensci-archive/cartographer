@@ -1,6 +1,6 @@
 Package: cartographer
 Type: Package
-Title: Interactive Maps with d3-carto-map
+Title: Interactive Maps for Data Exploration
 Version: 0.1.9000
 Authors@R: c(person("Lincoln", "Mullen", email = "lincoln@lincolnmullen.com",
     role = c("aut", "cre")))

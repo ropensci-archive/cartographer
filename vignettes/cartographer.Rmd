@@ -1,5 +1,5 @@
 ---
-title: "Using Cartographer for Interactive Maps in R"
+title: "Using Cartographer in R for Interactive, Exploratory Maps"
 author: "Lincoln Mullen"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
