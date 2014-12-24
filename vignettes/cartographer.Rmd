@@ -120,7 +120,7 @@ cartographer(region = "United States") %>%
                color = "green", label = "Converts", visible = FALSE)
 ```
 
-If you wish you can modify the [D3 quantitative scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales) used to scale the points by passing a different JavaScript function to the `radius_function =` parameter.
+If you wish you can modify the [D3 quantitative scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales) used to scale the points by passing a different JavaScript function to the `radius_func =` parameter.
 
 ## TopoJSON and GeoJSON Layers
 

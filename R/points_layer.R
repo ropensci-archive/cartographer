@@ -18,7 +18,7 @@
 #'   \code{data}. This field will be used to scale the points. The domain of the
 #'   scale will run from 0 to the maximum value in the \code{radius_field}; the
 #'   range will run from 0 to the value in \code{size}.
-#' @param radius_function A
+#' @param radius_func A
 #'   \href{https://github.com/mbostock/d3/wiki/Quantitative-Scales}{D3
 #'   quantitative scale function} to control the radius of the points.
 #' @param clickable Controls whether a point can be clicked to show the
@@ -40,7 +40,7 @@
 points_layer <- function(carto, data, x = "long", y = "lat", label = "Points",
   color = "red", size = 4, radius_field = NULL, clickable = TRUE,
   visible = TRUE, cluster = FALSE, opacity = 0.5,
-  radius_function = "d3.scale.sqrt().domain([0, layer.radius_domain]).range([0, layer.size])") {
+  radius_func = "d3.scale.sqrt().domain([0, layer.radius_domain]).range([0, layer.size])") {
 
   # Calculate the maximum for the domain of the radius scale function
   if(!is.null(radius_field))
@@ -61,7 +61,7 @@ points_layer <- function(carto, data, x = "long", y = "lat", label = "Points",
   points$cluster         <- cluster
   points$radius_domain   <- radius_domain
   points$radius_field    <- radius_field
-  points$radius_function <- radius_function
+  points$radius_func     <- radius_func
   points$opacity         <- opacity
 
   carto$x[[length(carto$x) +1]] <- points

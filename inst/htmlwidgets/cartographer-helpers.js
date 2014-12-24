@@ -40,7 +40,7 @@ function addPoints(layer, map) {
   var points = d3.carto.layer.xyArray();
 
   var colorPoints = function() {
-    var radiusScale = eval(layer.radius_function);
+    var radiusScale = eval(layer.radius_func);
 
     points.g().selectAll(".point")
       .style("fill", layer.color)
