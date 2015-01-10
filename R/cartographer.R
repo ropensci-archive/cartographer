@@ -55,7 +55,12 @@ cartographer <- function(region = NULL, bbox = NULL,
     x,
     width = width,
     height = height,
-    package = 'cartographer'
+    package = 'cartographer',
+    sizingPolicy = htmlwidgets::sizingPolicy(
+      viewer.padding = 0,
+      browser.fill = TRUE,
+      browser.padding = 0
+    )
   )
 }
 
