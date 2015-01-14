@@ -9,7 +9,7 @@ Cartographer is under very early development.
 To install the development version from GitHub, first install [devtools](https://github.com/hadley/devtools). Then install Cartographer:
 
 ```
-devtools::install_github("lmullen/cartographer")
+devtools::install_github("lmullen/cartographer", build_vignettes = TRUE)
 ```
 
 ### Basic use
