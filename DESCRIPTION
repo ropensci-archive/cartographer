@@ -1,7 +1,7 @@
 Package: cartographer
 Type: Package
 Title: Interactive Maps for Data Exploration
-Version: 0.1.9001
+Version: 0.1.9002
 Authors@R: c(person("Lincoln", "Mullen", email = "lincoln@lincolnmullen.com",
     role = c("aut", "cre")))
 Description: A wrapper around d3-carto-map and the d3.js visualization library
@@ -20,7 +20,7 @@ Suggests:
     knitr (>= 1.8),
     USAboundaries (>= 0.1)
 VignetteBuilder: knitr
-URL: https://github.com/lmullen/cartographer
-BugReports: https://github.com/lmullen/cartographer/issues
+URL: https://github.com/ropensci/cartographer
+BugReports: https://github.com/ropensci/cartographer/issues
 LazyData: yes
 
