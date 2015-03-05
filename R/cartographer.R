@@ -15,6 +15,8 @@
 #'   lat2))}
 #' @param width The width of the map in pixels.
 #' @param height The height of the map in pixels.
+#' @param browser Where to display the map. If \code{TRUE}, always display in
+#'   the browser. Otherwise, display in the RStudio Viewer if available.
 #'
 #' @examples
 #' if(require(historydata)) {
@@ -26,8 +28,8 @@
 #' @seealso \code{\link{points_layer}}, \code{\link{tile_layer}},
 #'   \code{\link{topojson_layer}}
 #' @export
-cartographer <- function(region = NULL, bbox = NULL,
-                         width = NULL, height = NULL) {
+cartographer <- function(region = NULL, bbox = NULL, width = NULL,
+                         height = NULL, browser = FALSE) {
 
   if(!is.null(region)) {
     if(tolower(region) == "united states")
@@ -59,7 +61,8 @@ cartographer <- function(region = NULL, bbox = NULL,
     sizingPolicy = htmlwidgets::sizingPolicy(
       viewer.padding = 0,
       browser.fill = TRUE,
-      browser.padding = 0
+      browser.padding = 0,
+      viewer.suppress = browser
     )
   )
 }

@@ -4,7 +4,8 @@
 \alias{cartographer}
 \title{Create a cartographer map}
 \usage{
-cartographer(region = NULL, bbox = NULL, width = NULL, height = NULL)
+cartographer(region = NULL, bbox = NULL, width = NULL, height = NULL,
+  browser = FALSE)
 }
 \arguments{
 \item{region}{The region to which the map should be centered. This region can
@@ -22,6 +23,9 @@ lat2))}}
 \item{width}{The width of the map in pixels.}
 
 \item{height}{The height of the map in pixels.}
+
+\item{browser}{Where to display the map. If \code{TRUE}, always display in
+  the browser. Otherwise, display in the RStudio Viewer if available.}
 }
 \description{
 This function creates a new instance of a d3-carto-map and sets its most
