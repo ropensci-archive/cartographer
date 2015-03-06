@@ -1,0 +1,25 @@
+{
+  "name": "cartographer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ropensci/cartographer",
+  "authors": [
+    "Lincoln Mullen <lincoln@lincolnmullen.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "inst/htmlwidgets/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3-carto-map": "emeeks/d3-carto-map",
+    "d3": "~3.5.5"
+  },
+  "resolutions": {
+    "d3": "~3.4.10"
+  }
+}
