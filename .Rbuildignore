@@ -9,3 +9,4 @@
 ^inst/htmlwidgets/lib/topojson/\.bower\.json$
 ^inst/htmlwidgets/lib/topojson/\.npmignore$
 ^inst/htmlwidgets/lib/d3-carto-map/d3cartoexample.png$
+^\.travis\.yml$
