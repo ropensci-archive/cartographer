@@ -13,7 +13,7 @@ Imports:
     assertthat (>= 0.1),
     htmlwidgets (>= 0.3.2),
     magrittr (>= 1.5),
-    rgdal (>= 0.9.1)
+    rgdal (>= 0.8-16)
 Suggests:
     dplyr(>= 0.3.0.2),
     historydata (>= 0.1),
