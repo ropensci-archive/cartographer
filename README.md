@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/ropensci/cartographer.svg)](https://travis-ci.org/ropensci/cartographer)
+
+
 ## Cartographer: Interactive Maps for Data Exploration
 
 Cartographer provides interactive maps in R Markdown documents or at the R console. These maps are suitable for data exploration. This package is an R wrapper around Elijah Meeks's [d3-carto-map](https://github.com/emeeks/d3-carto-map) and [d3.js](http://d3js.org/), using [htmlwidgets for R](http://www.htmlwidgets.org/).
