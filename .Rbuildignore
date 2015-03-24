@@ -1,6 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^\.bowerrc$
+^bower.json$
 ^data-raw$
 ^inst/htmlwidgets/lib/d3-carto-map/\.bower\.json$
 ^inst/htmlwidgets/lib/d3-plugins/\.bower\.json$
@@ -9,4 +10,4 @@
 ^inst/htmlwidgets/lib/topojson/\.bower\.json$
 ^inst/htmlwidgets/lib/topojson/\.npmignore$
 ^inst/htmlwidgets/lib/d3-carto-map/d3cartoexample.png$
-^bower.json$
+^\.travis\.yml$
