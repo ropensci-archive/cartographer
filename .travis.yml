@@ -3,6 +3,7 @@ warnings_are_errors: true
 
 r_binary_packages:
   - rgdal
+  - rmarkdown
 
 notifications:
   email:
