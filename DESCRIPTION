@@ -1,26 +1,17 @@
 Package: cartographer
 Type: Package
-Title: Interactive Maps for Data Exploration
-Version: 0.1.9002
-Authors@R: c(person("Lincoln", "Mullen", email = "lincoln@lincolnmullen.com",
-    role = c("aut", "cre")))
-Description: A wrapper around d3-carto-map and the d3.js visualization library
-  to create interactive maps at the R console and in R documents.
+Title: Interactive Data Maps with 'D3.js'
+Version: 0.1.1.9100
+Authors@R: c(
+    person("Lincoln", "Mullen", role = c("aut", "cre")), email = "lincoln@lincolnmullen.com"),
+    person("Michael", "Bostock", role = c("ctb", "cph"), comment = "D3.js library")
+    )
+Maintainer: Lincoln Mullen <lincoln@lincolnmullen.com>
+Description: Create interactive data maps such as choropleths and bubble maps 
+    using 'D3.js' and 'htmlwidgets'.
 License: MIT + file LICENSE
-Depends:
-    R (>= 3.1.2)
-Imports:
-    assertthat (>= 0.1),
-    htmlwidgets (>= 0.3.2),
-    magrittr (>= 1.5),
-    rgdal (>= 0.8-16)
-Suggests:
-    dplyr(>= 0.3.0.2),
-    historydata (>= 0.1),
-    knitr (>= 1.8),
-    USAboundaries (>= 0.1)
+Encoding: UTF-8
+LazyData: yes
 VignetteBuilder: knitr
 URL: https://github.com/ropensci/cartographer
 BugReports: https://github.com/ropensci/cartographer/issues
-LazyData: yes
-
