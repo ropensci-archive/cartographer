@@ -1,0 +1,4 @@
+dependencies:
+- name: d3
+  src: htmlwidgets/lib/d3
+  script: ./d3.min.js
