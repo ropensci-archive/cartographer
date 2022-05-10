@@ -1,3 +1,5 @@
-[![Project Status: Unsupported – The project has reached a stable, usable state but the author(s) have ceased all work on it. A new maintainer may be desired.](http://www.repostatus.org/badges/latest/unsupported.svg)](http://www.repostatus.org/#unsupported)
+# cartographer
 
-## Cartographer: Interactive Maps for Data Exploration
+[![Project Status: Abandoned](https://www.repostatus.org/badges/latest/abandoned.svg)](https://www.repostatus.org/#abandoned)
+
+This repository has been archived. The former README is now in [README-NOT.md](README-NOT.md).
